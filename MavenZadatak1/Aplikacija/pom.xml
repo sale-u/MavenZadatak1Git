@@ -23,7 +23,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <it.engineering.IzradaIzvestaja.version>1.0-SNAPSHOT</it.engineering.IzradaIzvestaja.version>
+    <it.engineering.SlanjePoruka.version>1.0-SNAPSHOT</it.engineering.SlanjePoruka.version>
   </properties>
 
   <dependencies>
@@ -31,7 +31,7 @@
     <dependency>
       <groupId>it.engineering</groupId>
       <artifactId>SlanjePoruka</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <version>${it.engineering.SlanjePoruka.version}</version>
     </dependency> 
     
     <dependency>
