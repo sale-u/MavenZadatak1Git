@@ -1,36 +1,30 @@
 package it.engineering.main;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import it.engineering.Slanje;
 import it.engineering.domain.Student;
-import it.engineering.report.Izvestaj;
-
 
 public class Main {
 	
-	private List<Student> students = new ArrayList<>();
-	
-    public static void main( String[] args ) {
-    	
-    	Main main = new Main();
-  
-    	// pre referenciranja klase Izvestaj iz modula IzradaIzvestaja
-    	// neophodno je u Aplikacija/pom.xml dodati dependency prema modulu IzradaIzvestaja
-    	Izvestaj izvestaj = new Izvestaj();
-    	
-    	// isto se more uraditi i pre referenciranja Slanje klase iz modula SlanjePoruka
+    public static void main( String[] args ) throws InterruptedException {
+
+    	// pre referenciranja klase Slanje iz modula SlanjePoruka
+    	// neophodno je u Aplikacija/pom.xml dodati dependency prema modulu SlanjePoruka
     	Slanje slanje = new Slanje();
-
-    	main.students.add(new Student("Pera", "pera@gmail.com"));
-    	main.students.add(new Student("Mika", "mika@gmail.com"));
-    	main.students.add(new Student("Laza", "laza@gmail.com"));
     	
+    	Student stud1 = new Student("Pera", "pera@gmail.com");
+    	Student stud2 = new Student("Mika", "mika@gmail.com");
+    	Student stud3 = new Student("Laza", "laza@gmail.com");
     	
-
+    	slanje.posalji(stud1.getEmail(), stud2.getEmail(), "Zdravo Miko. Ovde Pera");
+    	Thread.sleep(1000);
+    	slanje.posalji(stud2.getEmail(), stud3.getEmail(), "Zdravo Lazo. Ovde Mika");
+    	Thread.sleep(1000);
+    	slanje.posalji(stud3.getEmail(), stud1.getEmail(), "Zdravo Pero. Ovde Laza");
+    	Thread.sleep(1000);
+    	slanje.posalji(stud2.getEmail(), stud3.getEmail(), "Zdravo Lazo. Ovde Mika");
     	
-    	
+    	System.out.println();
+    	slanje.listLogs();
     	
     }
 }

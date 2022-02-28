@@ -27,12 +27,7 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>it.engineering</groupId>
-      <artifactId>IzradaIzvestaja</artifactId>
-      <version>${it.engineering.IzradaIzvestaja.version}</version>
-    </dependency>
-    
+
     <dependency>
       <groupId>it.engineering</groupId>
       <artifactId>SlanjePoruka</artifactId>
